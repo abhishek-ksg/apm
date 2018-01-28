@@ -40,6 +40,10 @@ export class ProductsListComponent implements OnInit {
         return this.products.filter( (product: IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
 
+    onRatingsClicked(message: string) {
+        this.pageTitle = 'My Products ' + message;
+    }
+
     ngOnInit() {
         this.productService.getProductData()
             .subscribe(
@@ -52,5 +56,6 @@ export class ProductsListComponent implements OnInit {
     }
 
     constructor(private productService: ProductService) {
+
     }
 }
