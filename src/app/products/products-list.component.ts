@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'pm-products',
-    templateUrl: './products-list.component.html',
-    styleUrls: ['./products-list.component.css']
+    templateUrl: './products-list.component.html'
 })
 export class ProductsListComponent {
     public pageTitle: string = 'My Products';
     public filterText: string = 'Cart';
+    public imageWidth: number = 50;
+    public imageMargin: number = 5;
+    public isShowImage: boolean = true;
 
     public products: Array<any> = [{
         'productId': 1,
@@ -29,4 +31,8 @@ export class ProductsListComponent {
         'starRating': 4.2,
         'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
     }];
+
+    public toggleImage(): void {
+        this.isShowImage = !this.isShowImage;
+    }
 }
