@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductsListComponent } from './products/products-list.component';
 import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
     declarations: [
         AppComponent,
         ProductsListComponent,
-        ConvertToSpacePipe
+        ConvertToSpacePipe,
+        StarComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

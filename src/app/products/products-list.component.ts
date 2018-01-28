@@ -21,7 +21,7 @@ export class ProductsListComponent {
         'releaseDate': 'March 19, 2016',
         'description': 'Leaf rake with 48-inch wooden handle.',
         'price': 19.95,
-        'starRating': 3.2,
+        'starRating': 3.7   ,
         'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png'
     },
     {
@@ -58,6 +58,6 @@ export class ProductsListComponent {
 
     constructor() {
         this.filterdProducts = this.products;
-        this.filterText = 'cart';
+        this.filterText = '';
     }
 }
