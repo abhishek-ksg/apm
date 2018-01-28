@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 
+import { IProduct } from './product.interface';
+
 @Component({
     selector: 'pm-products',
     templateUrl: './products-list.component.html'
 })
 export class ProductsListComponent {
     public pageTitle: string = 'My Products';
-    public filterText: string = 'Cart';
     public imageWidth: number = 50;
     public imageMargin: number = 5;
     public isShowImage: boolean = true;
+    public filterdProducts: Array<IProduct> = [];
 
-    public products: Array<any> = [{
+    private products: Array<IProduct> = [{
         'productId': 1,
         'productName': 'Leaf Rake',
         'productCode': 'GDN-0011',
@@ -32,7 +34,29 @@ export class ProductsListComponent {
         'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
     }];
 
+    private _filterText: string;
+
+    get filterText(): string{
+        return this._filterText;
+    }
+
+    set filterText(filterBy: string) {
+        this._filterText = filterBy;
+        this.filterdProducts = (this.filterText) ? this.getFilteredProducts() : this.products;
+        console.log(this.filterdProducts);
+    }
+
     public toggleImage(): void {
         this.isShowImage = !this.isShowImage;
+    }
+
+    private getFilteredProducts(): Array<IProduct> {
+        const filterBy: string = this.filterText.toLocaleLowerCase();
+        return this.products.filter( (product: IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    }
+
+    constructor() {
+        this.filterdProducts = this.products;
+        this.filterText = 'cart';
     }
 }
