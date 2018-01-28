@@ -44,7 +44,7 @@ export class ProductsListComponent implements OnInit {
         this.productService.getProductData()
             .subscribe(
                 (products) => {
-                    this.products = products;
+                    this.products = <Array<IProduct>>products;
                     this.filterdProducts = this.products;
                 },
                 (error) => this.errorMessage = error
