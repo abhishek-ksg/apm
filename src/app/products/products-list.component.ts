@@ -4,7 +4,8 @@ import { IProduct } from './product.interface';
 
 @Component({
     selector: 'pm-products',
-    templateUrl: './products-list.component.html'
+    templateUrl: './products-list.component.html',
+    styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent {
     public pageTitle: string = 'My Products';
