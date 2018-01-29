@@ -1,6 +1,19 @@
 <div>
     <h1>{{pageTitle}}</h1>
     <div>
-        <pm-products></pm-products>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Amazon Product Management</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a [routerLink]="['/welcome']">Welcome</a></li>
+                <li><a [routerLink]="['/products']">Products</a></li>
+              </ul>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
     </div>
 </div>

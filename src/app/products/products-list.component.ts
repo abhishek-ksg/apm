@@ -5,7 +5,6 @@ import { ProductService } from '../shared/product.service';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
-    selector: 'pm-products',
     templateUrl: './products-list.component.html',
     styleUrls: ['./products-list.component.css']
 })
