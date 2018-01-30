@@ -6,3 +6,12 @@
     margin-bottom: 4px;
     font-size: 20px;
 }
+
+.detail-row-star {
+    padding: 0px;
+}
+
+.detail-row-star-component {
+    margin-top: 7px;
+    padding: 0px
+}

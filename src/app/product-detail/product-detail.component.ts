@@ -13,17 +13,21 @@ export class ProductDetailComponent implements OnInit {
     public product: IProduct;
     public errorMessage: string = '';
     public imageWidth: number = 200;
+    public starRating: string;
 
     constructor( private productService: ProductService, private activatedRoute: ActivatedRoute ) {}
 
+    public onRatingsClicked(starRating: string) {
+        this.starRating = starRating;
+    }
 
     ngOnInit() {
         this.productId = +this.activatedRoute.snapshot.params['id'];
 
         this.productService.getProductData(this.productId)
-            .subscribe(
-                (product) => this.product = <IProduct>product,
-                (err) => this.errorMessage = err
-            );
+        .subscribe(
+            (product) => this.product = <IProduct>product,
+            (err) => this.errorMessage = err
+        );
     }
 }
