@@ -9,6 +9,7 @@ import { ProductsListComponent } from './products/products-list.component';
 import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
 import { StarComponent } from './shared/star.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
     imports: [
@@ -19,6 +20,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
             {
                 path: 'products',
                 component: ProductsListComponent
+            },
+            {
+                path: 'products/product/:id',
+                component: ProductDetailComponent
             },
             {
                 path: 'welcome',
@@ -43,7 +48,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
         ProductsListComponent,
         ConvertToSpacePipe,
         StarComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        ProductDetailComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

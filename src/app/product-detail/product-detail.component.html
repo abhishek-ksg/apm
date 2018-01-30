@@ -1,0 +1,23 @@
+<div class="panel panel-primary" *ngIf='product'>
+    <div class="panel-heading">
+        {{'Product: ' + product.productName}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6 product-detail-text-block">
+                <div class="row detail-row">{{'Product Name: ' + product.productName}}</div>
+                <div class="row detail-row">{{'Product Code: ' + product.productCode}}</div>
+                <div class="row detail-row">{{'Product Release Date: ' + product.releaseDate}}</div>
+                <div class="row detail-row">{{'Product Price: ' + product.price}}</div>
+                <div class="row detail-row">{{'Product Star: ' + product.starRating}}</div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-image"><img [src]='product.imageUrl' [title]='product.productName | uppercase'/></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+
+    </div>
+</div>
+<div>{{testText}}</div>

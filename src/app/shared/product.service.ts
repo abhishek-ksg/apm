@@ -1,11 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { IProduct } from '../products/product.interface';
-import {  } from "@angular/common/http/src/response";
 
 @Injectable()
 export class ProductService {
@@ -19,7 +18,7 @@ export class ProductService {
                 .catch(this.handleError);
     }
 
-    private handleError(error : HttpErrorResponse) {
+    private handleError(error: HttpErrorResponse) {
         return Observable.throw(error.message);
     }
 }
