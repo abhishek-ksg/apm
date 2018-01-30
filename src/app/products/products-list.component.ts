@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { IProduct } from './product.interface';
 import { ProductService } from '../shared/product.service';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
     templateUrl: './products-list.component.html',
@@ -44,7 +43,7 @@ export class ProductsListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.productService.getProductData()
+        this.productService.getAllProductsData()
             .subscribe(
                 (products) => {
                     this.products = <Array<IProduct>>products;
