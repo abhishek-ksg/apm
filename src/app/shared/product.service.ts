@@ -10,6 +10,8 @@ import { IProduct } from '../products/product.interface';
 @Injectable()
 export class ProductService {
 
+    private productsIds: Array<number> = [];
+
     constructor( private _http: HttpClient) {
 
     }

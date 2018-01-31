@@ -52,6 +52,14 @@
         </div>
     </div>
     <div class="panel-footer">
-
+        <button type="button" class="btn btn-info" (click)='goBack()'>
+            <span class="glyphicon glyphicon-chevron-left"></span> Back
+        </button>
+        <button type="button" class="btn btn-info" (click)='nextPrevProduct(-1)' [disabled]='prevDisabled'>
+            <span class="glyphicon glyphicon-chevron-left"></span> Previous
+        </button>
+        <button type="button" class="btn btn-info" (click)='nextPrevProduct(1)' [disabled]='nextDisabled'>
+            Next <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
     </div>
 </div>
