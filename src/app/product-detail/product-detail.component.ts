@@ -29,19 +29,18 @@ export class ProductDetailComponent implements OnInit {
         this.router.navigate(['/products']);
     }
 
-    public nextPrevProduct(value: number) {
+    public updateNextPrevButton() {
         const currentProductId: number = +this.product.productId;
-        const newProductId: number = this.productsIds[this.productsIds.indexOf(currentProductId) + value];
-        if (!newProductId) {
-            this.nextDisabled = (value === 1) ? true : false;
-            this.prevDisabled = (value === -1) ? true : false;
-        }else {
-            this.productId = newProductId;
-            this.router.navigate(['/products/product', this.productId]);
+        const nextProductId: number = this.productsIds[this.productsIds.indexOf(currentProductId) + 1];
+        const prevProductId: number = this.productsIds[this.productsIds.indexOf(currentProductId) - 1];
 
-            this.nextDisabled = (this.productsIds.indexOf(this.productId) === this.productsIds.length) ? true : false;
-            this.prevDisabled = (this.productsIds.indexOf(this.productId) === 0) ? true : false;
-        }
+        this.nextDisabled = !nextProductId ? true : false;
+        this.prevDisabled = !prevProductId ? true : false;
+    }
+
+    public nextPrevProduct(value: number) {
+        const currentProductIdIndex: number = this.productsIds[this.productsIds.indexOf(+this.product.productId) + value];
+        this.router.navigate(['/products/product', currentProductIdIndex]);
     }
 
     ngOnInit() {
@@ -60,7 +59,10 @@ export class ProductDetailComponent implements OnInit {
             this.productId = +params.get('id');
             this.productService.getProductData(this.productId)
             .subscribe(
-                (product) => this.product = <IProduct>product,
+                (product) => {
+                    this.product = <IProduct>product;
+                    this.updateNextPrevButton();
+                },
                 (err) => this.errorMessage = err
             );
         });

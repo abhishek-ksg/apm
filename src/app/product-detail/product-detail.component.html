@@ -18,7 +18,7 @@
                         Product Code:
                     </span>
                     <span class="detail-row detail-row-star col-sm-5">
-                        {{product.productCode}}
+                        {{product.productCode | lowercase | convertToSpace:'-'}}
                     </span>
                 </div>
                 <div class="row detail-row">
@@ -34,7 +34,7 @@
                         Product Price:
                     </span>
                     <span class="detail-row detail-row-star col-sm-5">
-                        {{product.price}}
+                        {{product.price | currency:'USD':true:'1.2-2'}}
                     </span>
                 </div>
                 <div class="row">
