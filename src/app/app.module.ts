@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ProductsListComponent } from './products/products-list.component';
-import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
-import { StarComponent } from './shared/star.component';
+import { ProductsListComponent } from './products/products-list/products-list.component';
+import { ConvertToSpacePipe } from './shared/pipes/convert-to-space.pipe';
+import { StarComponent } from './shared/star-component/star.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 @NgModule({
     imports: [

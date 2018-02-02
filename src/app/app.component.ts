@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductService } from './shared/product.service';
+import { ProductService } from './products/services/product.service';
 
 @Component({
     selector: 'pm-root',
