@@ -62,6 +62,7 @@ export class ProductDetailComponent implements OnInit {
                 (product) => {
                     this.product = <IProduct>product;
                     this.updateNextPrevButton();
+                    this.starRating = '';
                 },
                 (err) => this.errorMessage = err
             );
